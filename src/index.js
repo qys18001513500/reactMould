@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+// import 'normalize.css/normalize.css';
 import './index.css';
 import BaseRouter from './router/BaseRouter';
 // import * as serviceWorker from './config/serviceWorker';
@@ -13,6 +14,7 @@ ReactDOM.render(<BaseRouter />, document.getElementById('root'));
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 // serviceWorker.unregister();
+
 
 Date.prototype.Format = function (fmt) { //author: meizz   
 	var o = {
@@ -28,6 +30,6 @@ Date.prototype.Format = function (fmt) { //author: meizz
 		fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
 	for (var k in o)
 		if (new RegExp("(" + k + ")").test(fmt))
-			fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+			fmt = fmt.replace(RegExp.$1, (RegExp.$1.length === 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
 	return fmt;
 } 

@@ -1,88 +1,88 @@
+
+@import '../styles/mixin.scss';
 .login {
     width: 100%;
     height: 100%;
     position: relative;
     // background: url("../../images/bg.png");
-    background-blend-mode: multiply;
-    /*background-blend-mode 属性定义了背景层的混合模式    multiply正片叠底模式*/
-    >.wrapper {
+    background-image: linear-gradient(270deg, #8146b4, #6990f6);
+    // @include linear-bg;
+    @include bubble-bgwall;
+    .bubble-distribution {
         position: absolute;
-        width: 300px;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        >.name {
-            color: white;
-            font-size: 18px;
-            text-align: center;
-            margin-bottom: 10px;
+        padding: 25px;
+        border-radius: 2px;
+        width: 320px;
+        background-color: #fff;
+        h3 {
+            font-weight: bold;
+            font-size: 16px;
+            color: #333;
         }
-
-        >.psd {
+        div {
+            margin-top: 10px;
+        }
+        img {
+            position: absolute;
+            left: 50%;
+            bottom: 100%;
+            margin: 0 0 -20px -60px;
+            width: 120px;
+        }
+        input[type=text],
+        input[type=password] {
+            box-sizing: border-box;
+            padding: 10px;
+            outline: none;
+            border: 1px solid #e9e9e9;
+            border-radius: 2px;
             width: 100%;
-            position: relative;
-            >.password {
-                position: relative;
-                width: 100%;
-                height: 35px;
-                border: 1px solid #96C2F1;
-                background-color: #EFF7FF;
-                border-radius: 5px;
-                //background-color:rgba(0,0,0,0.1);
-                >input {
-                    position: absolute;
-                    right: 0;
-                    width: 98%;
-                    height: 100%;
-                    border: 0;
-                    outline: none;
-                    color: #000;
-                    background-color: rgba(0, 0, 0, 0);
-                }
+            height: 50px;
+            transition: all 300ms;
+            &:focus:valid {
+                border-color: #09f;
             }
-
-            >.pad-tip {
-                color: #f43;
-                position: absolute;
-                top: 5px;
-                right: -80px;
+            &:focus:invalid {
+                border-color: #f66;
             }
         }
-
-        >.btn {
+        button {
+            overflow: hidden;
+            margin-top: 20px;
+            outline: none;
+            border: none;
+            border-radius: 2px;
             width: 100%;
-            height: 35px;
-            line-height: 30px;
-            text-align: center;
-            font-size: 18px;
-            color: white;
+            height: 40px;
+            background-color: #09f;
             cursor: pointer;
-            border: 1px solid #96C2F1;
-            background-color: #0044ff;
-            border-radius: 6px;
-            margin-top: 15px;
-            letter-spacing: 5px;
-            //background-color:rgba(0,0,0,0.1);
+            color: #fff;
+            transition: all 300ms;
+        }
+    }
+    .accout,
+    .password {
+        img {
+            display: none;
+            margin-bottom: -27px;
+        }
+        &:focus-within {
+            img {
+                display: block;
+            }
+            & ~ img {
+                display: none;
+            }
+        }
+    }
+    @keyframes move {
+        to {
+            background-position: 6% 0, -6% 100%, 0 -6%, 100% 6%;
         }
     }
 
-
-    >.logo {
-        height: 80px;
-        border: 1px solid red;
-    }
-
 }
 
-@keyframes spacetravel {
-    from {
-        background-position: 0 0;
-    }
-    to {
-        background-position: -10000px 10000px;
-    }
-}
