@@ -15,6 +15,8 @@
 ## src/router (路由)
 
 ## src/store (用于管理全局state)
+
+## src/styles (通用样式文件)
 > conmmon.scss (常用css样式)
 
 > container.scss (常用容器 css样式)
@@ -24,8 +26,6 @@
 > mixin.scss (常用效果 css样式)
 
 > variable.scss (配置常用css样式的变量值)
-
-## src/styles (通用样式文件)
 
 ## index.js (入口文件)
 
