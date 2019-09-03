@@ -1,0 +1,18 @@
+.golNav {
+    width: 100%;
+    height: 100%;
+    background: #770103;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    >.pic-wrap {
+        width: 85%;
+        height: calc(100% / 6);
+        display: flex;
+        align-items: center;
+        >img {
+            width: 100%;
+            cursor: pointer;
+        }
+    }
+}

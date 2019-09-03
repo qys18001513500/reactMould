@@ -9,3 +9,19 @@
         clear: both;
     }
 }
+
+// flex水平垂直居中
+@mixin flex-center($direction: row) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: center;
+    align-items: center;
+}
+
+// 文字溢出省略
+@mixin text-overflow($line: 1) {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    line-clamp: $line;
+}

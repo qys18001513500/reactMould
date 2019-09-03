@@ -1,0 +1,151 @@
+@import url('https://at.alicdn.com/t/font_1236591_54zq44yv1ls.css');
+.book {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.book-wrapper {
+    width: 98%;
+    height: 98%;
+    border-width: 3px 10px;
+    border-style: solid;
+    border-color: #009bdb;
+    position: relative;
+}
+
+.book-wrapper::before,
+.book-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    width: 10px;
+    height: 100%;
+    background: -webkit-linear-gradient(left, #dddddd 33.33%, #f0f0f0 33.33%, #f0f0f0 66.66%, white 66.66%);
+    background: linear-gradient(to right, #dddddd 33.33%, #f0f0f0 33.33%, #f0f0f0 66.66%, white 66.66%);
+    background-size: 3px 100%;
+    backface-visibility: hidden;
+}
+.book-wrapper::before { left: 0 }
+.book-wrapper::after { right: 0 }
+
+.bb-item1, .bb-item2 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .bb-item1.hide, .bb-item2.hide {
+      display: none;
+  }
+
+
+.bb-custom-side {
+    position: absolute;
+    float: left;
+    overflow: hidden;
+    background: #fff;
+    z-index: 1;
+    // backface-visibility: hidden;
+    width: 50%;
+    height: 100%;
+}
+
+.bb-custom-side::before {
+    position: absolute;
+    top: 0;
+    z-index: 100;
+    width: 80px;
+    height: 100%;
+    box-shadow: inset 30px 0 40px -20px rgba(0, 0, 0, 0.1);
+    content: '';
+}
+
+.bb-custom-side:first-child::before {
+    right: 0;
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.05), inset -30px 0 40px -20px rgba(0, 0, 0, 0.15);
+}
+.page-layout-1:last-child { right: 0 }
+.page-layout-2 { right: 0; }
+// .page-layout-2:first-child { 
+//     transform: translateY(-180deg);
+// }
+.page-layout-1 >img, .page-layout-2 >img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 500px;
+    width: 100%;
+    transform: translate(-50%, -50%);
+}
+
+.book >.book-wrapper >nav >.close-page,
+.book >.book-wrapper >nav >.prev-page,
+.book >.book-wrapper >nav >.next-page {
+    position: absolute;
+    color: #ccc;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.book >.book-wrapper >nav >.close-page {
+    right: 20px;
+    top: 8px;
+}
+.book >.book-wrapper >nav >.prev-page {
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.book >.book-wrapper >nav >.next-page {
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.book >.book-wrapper >nav >.close-page >.icon-guanbi {
+    font-size: 25px;
+    color: #000;
+}
+.book >.book-wrapper >nav >.prev-page >.icon-shangyiye,
+.book >.book-wrapper >nav>.next-page >.icon-shangyiye1 {
+    font-size: 35px;
+}
+
+
+.flip-animation-start {
+    animation: flipBook1 3s forwards;
+}
+.flip-animation-end {
+    animation: flipBook2 3s forwards;
+}
+@keyframes flipBook1 {
+    0% {
+        transform-origin: 0 50%;
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform-origin: 0 50%;
+        transform: rotateY(-180deg);
+    }
+}
+@keyframes flipBook2 {
+    0% {
+        transform-origin: 100% 50%;
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform-origin: 100% 50%;
+        transform: rotateY(180deg);
+    }
+}

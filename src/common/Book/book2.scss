@@ -1,0 +1,116 @@
+@import url("https://at.alicdn.com/t/font_1236591_54zq44yv1ls.css");
+.book2 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: rgba(0,0,0,.8);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  >.closeSty{
+    position: absolute;
+    right: 25px;
+    top: 8px;
+    color: #fff;
+    font-size: 40px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  > .iconfont {
+    position: absolute;
+    font-size: 45px;
+    color: #fff;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  > .icon-icon-test1 {
+    left: 100px;
+  }
+  > .icon-icon-test2 {
+    right: 100px;
+  }
+  #flipbook {
+    .hard {
+      background: #fff;
+    }
+  }
+}
+
+.book-wrapper {
+  border-width: 3px 10px;
+  border-style: solid;
+  border-color: #008c8c;
+  position: relative;
+}
+.left-border,
+.right-border {
+  position: absolute;
+  top: 0;
+  z-index: 100;
+  width: 10px;
+  height: 100%;
+  background: -webkit-linear-gradient(
+    left,
+    #dddddd 33.33%,
+    #f0f0f0 33.33%,
+    #f0f0f0 66.66%,
+    white 66.66%
+  );
+  background: linear-gradient(
+    to right,
+    #dddddd 33.33%,
+    #f0f0f0 33.33%,
+    #f0f0f0 66.66%,
+    white 66.66%
+  );
+  background-size: 3px 100%;
+  backface-visibility: hidden;
+}
+.left-border {
+  left: 0;
+}
+.right-border {
+  right: 0;
+}
+
+.pages {
+  position: relative;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// .pages::before {
+//   position: absolute;
+//   top: 0;
+//   z-index: 100;
+//   width: 80px;
+//   height: 100%;
+//   box-shadow: inset 30px 0 40px -20px rgba(0, 0, 0, 0.1);
+//   content: "";
+// }
+
+
+// .pages:first-child::before {
+//   right: 0;
+//   box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.05),
+//     inset -30px 0 40px -20px rgba(0, 0, 0, 0.3);
+// }
+
+#flipbook .turn-page-wrapper::before {
+  position: absolute;
+  top: 0;
+  z-index: 100;
+  width: 80px;
+  height: 100%;
+  box-shadow: inset 30px 0 40px -20px rgba(0, 0, 0, 0.3);
+  content: "";
+}
+#flipbook .turn-page-wrapper:nth-of-type(even)::before {
+  right: 0;
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.05),
+    inset -30px 0 40px -20px rgba(0, 0, 0, 0.3);
+}
